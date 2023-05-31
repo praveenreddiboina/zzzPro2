@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load cart %}
+{% load custom_filter %}
+
+<section class="trending-product" id="trending">
+    <div class="center-text">
+        <h2>Our Trending <span>products</span></h2>
+    </div>
+    <div class="products">
+        {% for product in products %}
+        <div class="row">
+            <img src="{{product.image.url}}" alt="">
+            
+            <div class="price">
+                <h4>{{product.name}}</h4>
+                <p>{{product.price|currency}}</p>
+            </div>
+        </div>
+        {% endfor%}
+    </div>
+</section>
+
+
+{%  endblock %}
